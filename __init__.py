@@ -5,13 +5,13 @@ import folder_paths
 
 
 class ComfyUIGitIt:
+    EXPORT_DIR = "ComfyUI-GitIt-exported"
+
     @classmethod
     def INPUT_TYPES(cls):
-        self.EXPORT_DIR = "ComfyUI-GitIt-exported"
-
         return {
             "required": {
-                "filename_prefix": ("STRING", {"default": f"{self.EXPORT_DIR}/workflow"}),
+                "filename_prefix": ("STRING", {"default": f"{cls.EXPORT_DIR}/workflow"}),
             },
             "hidden": {
                 "prompt": "PROMPT",
@@ -24,7 +24,7 @@ class ComfyUIGitIt:
     OUTPUT_NODE = True
     CATEGORY = "utils"
 
-    def export_workflows(self, filename_prefix=f"{self.EXPORT_DIR}/workflow", prompt=None, extra_pnginfo=None):
+    def export_workflows(self, filename_prefix=None, prompt=None, extra_pnginfo=None):
         output_dir = folder_paths.get_output_directory()
         full_output_folder, filename, counter, _, _ = folder_paths.get_save_image_path(
             filename_prefix, output_dir
