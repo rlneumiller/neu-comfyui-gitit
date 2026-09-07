@@ -1,6 +1,6 @@
 # ComfyUI-GitIt
 
-From within the ComfyUI web UI - Exports both the GUI and API workflows during generation into numbered JSON files in ComfyUI's output folder in the subfolder ComfyUI-GitIt-.
+From within the ComfyUI web UI - Exports both the GUI and API workflows during generation into numbered JSON files in ComfyUI's output folder in the subfolder ComfyUI-GitIt-exported.
 
 ## Install
 
